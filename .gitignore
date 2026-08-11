@@ -1,0 +1,50 @@
+# Restricted or private inputs
+data/raw/**
+!data/raw/README.md
+private/**
+!private/README.md
+project_sources/
+upload/
+
+# Generated analysis data and outputs
+analysis_outputs/
+aggregate_inputs/
+results/
+tables/
+figures/
+report/
+validation/
+*.xlsx
+*.xls
+*.csv
+*.tsv
+*.pkl
+*.pickle
+*.parquet
+*.feather
+*.sav
+*.dta
+*.log
+
+# Credentials and local configuration
+.env
+.env.*
+config.yaml
+config.yml
+config.json
+*.pem
+*.key
+
+# Python and editor files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
