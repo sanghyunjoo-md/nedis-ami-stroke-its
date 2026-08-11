@@ -2,9 +2,9 @@
 
 This repository contains the Python analysis code accompanying the manuscript:
 
-> **Changes in Emergency Department Utilization and Patient Flow for Acute Myocardial Infarction and Stroke Following the 2024 Mass Resignation of Junior Physicians in South Korea: A Nationwide Interrupted Time-Series Study**
+> **Changes in Emergency Department Utilization, Presenting Severity, and Care Pathways for Acute Myocardial Infarction and Stroke Following the 2024 Mass Resignation of Junior Physicians in South Korea: A Nationwide Interrupted Time-Series Study**
 
-The code constructs the prespecified cohort, aggregates complete calendar weeks, fits the interrupted time-series models, performs sensitivity and exploratory analyses, and generates manuscript tables and figures.
+The code constructs the prespecified cohort, aggregates complete calendar weeks, fits the interrupted time-series models, performs primary, sensitivity, access, presenting-severity, care-pathway, and supportive case-mix analyses, validates the results, and generates manuscript-facing tables and figures.
 
 ## Data availability and repository scope
 
@@ -16,11 +16,13 @@ Qualified researchers must obtain an authorized NEDIS extract directly from the 
 
 ```text
 analysis/          Ordered analysis scripts and shared model utilities
+analysis_extension/ Prespecified access, severity, and care-pathway extension
 data/raw/          Local location for the restricted workbook (ignored by Git)
 private/           Optional local location for the signed locked SAP (ignored by Git)
 docs/              Workflow, variable map, provenance, and release-audit notes
 tests/             Data-free tests of core multiplicity utilities
 analysis_outputs/  Generated locally and ignored by Git
+analysis_extension_outputs/  Generated extension files, ignored by Git
 ```
 
 ## Software environment
@@ -67,10 +69,17 @@ The signed locked SAP is optional for integrity verification. Place it at `priva
 
 ## Run the analysis
 
-Run the complete pipeline:
+Run the parent and extension pipelines together:
+
+```bash
+python run_all.py
+```
+
+The pipelines may also be run separately:
 
 ```bash
 python analysis/run_all.py
+python analysis_extension/run_all.py
 ```
 
 The ordered scripts are:
@@ -88,9 +97,18 @@ The ordered scripts are:
 
 Outputs are written to `analysis_outputs/`, which is intentionally ignored by Git.
 
+The extension scripts then derive eight access, presenting-severity, and
+care-pathway outcomes; fit 24 disease-specific central models and eight disease-
+heterogeneity models; run 110 sensitivity models; fit 12 supportive encounter-
+level case-mix models; validate all estimates; and prepare the data underlying
+the extension results workbook. Extension outputs are written to
+`analysis_extension_outputs/`, which is also ignored by Git. See
+[analysis_extension/README.md](analysis_extension/README.md) for the optional
+local integrity settings.
+
 ## Reproducibility status
 
-The complete pipeline was re-executed from the restricted source extract on 2026-08-11 using the pinned environment. All manuscript-facing CSV outputs and PNG figures matched the independently generated clean rerun byte for byte. See [docs/public_release_audit.md](docs/public_release_audit.md).
+The parent pipeline and analysis extension were independently re-executed from the restricted source extract and unchanged complete-week cohort on 2026-08-11 using the pinned environment. The manuscript-facing statistical outputs matched the clean-run sources; the parent CSV and PNG outputs matched byte for byte, and the extension validation passed all reconciliation, multiplicity, convergence, confidence-interval, and independent coefficient checks. See [docs/public_release_audit.md](docs/public_release_audit.md).
 
 ## Interpretation
 

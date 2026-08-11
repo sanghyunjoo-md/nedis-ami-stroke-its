@@ -39,3 +39,23 @@ The statistical formulas, cohort logic, prespecified dates, outcomes, model fami
 - adding a pipeline runner, documentation, citation metadata, license, tests, and ignore rules;
 - excluding all restricted or potentially redistributable inputs and outputs.
 
+## v1.1.0 extension verification
+
+The prespecified analysis extension was independently re-executed from the
+unchanged parent complete-week cohort. It reconciled 189,330 encounters across
+59 preinterruption and 44 postinterruption weeks. All 24 disease-specific
+central models, eight disease-heterogeneity models, and 110 sensitivity models
+converged. The validation suite reproduced 120 central estimate rows, 16
+heterogeneity tests, 48 supportive pairwise contrasts, 220 sensitivity estimate
+rows, and 12 supportive case-mix models; 10 case-mix models were estimable and
+two retained their prespecified non-estimable status with diagnostic reasons.
+
+The extension results workbook in the submission package matched the verified
+clean-run workbook byte for byte, and the manuscript Figure 5 matched the
+verified submission figure byte for byte. The public release contains only the
+statistical and figure-generation code plus the machine-readable analysis
+definitions. It excludes the signed extension addendum, local lock manifest,
+restricted cohort, derived inputs, all result files, and restricted-file
+checksums. Public-release edits to the extension were limited to configurable
+private paths, optional local integrity checks, runners, documentation, and
+ignore rules; the derivation and statistical model logic was not changed.

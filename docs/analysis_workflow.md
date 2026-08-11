@@ -30,3 +30,25 @@ Holm adjustment is applied across all 12 confirmatory tests.
 
 Generated files are written to `analysis_outputs/` and remain local.
 
+## Access, severity, and care-pathway extension
+
+The prespecified extension reads the unchanged 189,330-encounter complete-week
+cohort created by the parent pipeline. It evaluates symptom-onset-to-arrival
+time, impaired consciousness, shock-range systolic blood pressure, hypoxemia,
+KTAS escalation, consulting-specialist involvement, condition-concordant
+department, and high-acuity final treatment area.
+
+Disease-specific models use the same interruption timing, annual seasonality,
+and Newey-West lag-4 covariance framework as the parent analysis. Multiplicity
+is controlled by Benjamini-Hochberg adjustment within fixed access, presenting-
+severity, and care-pathway domains. Disease-heterogeneity tests form a separate
+fixed family. Prespecified variants assess interruption timing, seasonality,
+HAC lag, onset-time bounds, disposition-code exclusion, and a stricter stroke-
+department definition. Supportive encounter-level care-pathway models add
+case-mix covariates and facility fixed effects with two-way clustered covariance
+when estimable.
+
+The extension validation independently recomputes multiplicity adjustments and
+model coefficients, reconciles all weekly denominators, checks convergence and
+confidence intervals, and generates the extension figures. Generated files are
+written to `analysis_extension_outputs/` and remain local.

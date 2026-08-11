@@ -1,8 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the archived release and the associated article."
-title: "Analysis code for a nationwide interrupted time-series study of AMI and stroke in South Korea"
+title: "Analysis code for a nationwide interrupted time-series study of AMI and stroke emergency care in South Korea"
 type: software
-version: 1.0.0
+version: 1.1.0
+date-released: 2026-08-11
 authors:
   - family-names: Joo
     given-names: Sang Hyun
@@ -18,4 +19,3 @@ keywords:
   - ischemic stroke
   - hemorrhagic stroke
   - NEDIS
-

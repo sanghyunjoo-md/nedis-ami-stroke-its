@@ -1,0 +1,111 @@
+{
+  "version": "1.0",
+  "lock_id": "BMC-NEDIS-EXT-v1.0-2026-08-06",
+  "study": {
+    "diseases": ["AMI", "Ischemic stroke", "Hemorrhagic stroke"],
+    "first_complete_week": "2023-01-02",
+    "transition_week": "2024-02-19",
+    "first_post_week": "2024-02-26",
+    "last_complete_week": "2024-12-23",
+    "expected_pre_weeks": 59,
+    "expected_post_weeks": 44
+  },
+  "central_model": {
+    "terms": ["intercept", "time", "post", "post_time", "sin1", "cos1"],
+    "annual_period_weeks": 52.18,
+    "hac_lag": 4,
+    "combined_post_weeks": [13, 26, 43],
+    "alpha": 0.05
+  },
+  "outcomes": {
+    "onset_to_arrival": {
+      "domain": "Access",
+      "type": "continuous_weekly_median",
+      "sources": ["ptmiakdt", "ptmiaktm", "ptmiindt", "ptmiintm"],
+      "valid_min_minutes": 0,
+      "valid_max_minutes": 43200,
+      "model": "OLS on log weekly median",
+      "effect_scale": "ratio of medians"
+    },
+    "impaired_consciousness": {
+      "domain": "Presenting severity",
+      "type": "binary",
+      "source": "ptmiresp",
+      "valid_codes": ["A", "V", "P", "U"],
+      "event_codes": ["V", "P", "U"],
+      "effect_scale": "OR"
+    },
+    "shock_range_sbp": {
+      "domain": "Presenting severity",
+      "type": "binary",
+      "source": "ptmihibp",
+      "valid_range": [0, 300],
+      "event_rule": "value < 90",
+      "effect_scale": "OR"
+    },
+    "hypoxemia": {
+      "domain": "Presenting severity",
+      "type": "binary",
+      "source": "ptmivoxs",
+      "valid_range": [0, 100],
+      "event_rule": "value < 90",
+      "effect_scale": "OR"
+    },
+    "ktas_escalation": {
+      "domain": "Care pathways",
+      "type": "binary",
+      "sources": ["ptmikts1", "ptmikts2"],
+      "valid_range": [1, 5],
+      "event_rule": "ptmikts2 < ptmikts1",
+      "effect_scale": "OR"
+    },
+    "specialist_involvement": {
+      "domain": "Care pathways",
+      "type": "binary",
+      "source": "ptmisdcd",
+      "valid_codes": ["1", "2", "3", "4"],
+      "event_codes": ["3", "4"],
+      "effect_scale": "OR"
+    },
+    "concordant_department": {
+      "domain": "Care pathways",
+      "type": "binary",
+      "source": "ptmidept",
+      "unknown_codes": ["-", "XX", "ZZ"],
+      "event_codes": {
+        "AMI": ["AA"],
+        "Ischemic stroke": ["FA", "BB"],
+        "Hemorrhagic stroke": ["FA", "BB"]
+      },
+      "effect_scale": "OR"
+    },
+    "high_acuity_area": {
+      "domain": "Care pathways",
+      "type": "binary",
+      "source": "ptmiarea",
+      "valid_codes": ["1", "2", "3", "4", "5", "6"],
+      "event_codes": ["3", "5"],
+      "restriction": "ptmiemcl == A",
+      "effect_scale": "OR"
+    }
+  },
+  "multiplicity": {
+    "Access": 6,
+    "Presenting severity": 18,
+    "Care pathways": 24,
+    "Disease heterogeneity": 16,
+    "method": "Benjamini-Hochberg within fixed domain"
+  },
+  "sensitivities": {
+    "alternative_interruption": "Exclude 2024-02-26 week; first post week 2024-03-04",
+    "second_harmonic": true,
+    "hac_lags": [1, 8],
+    "onset_upper_minutes": [10080, 1440],
+    "exclude_doa_code": "41",
+    "strict_stroke_department": {
+      "Ischemic stroke": ["FA"],
+      "Hemorrhagic stroke": ["BB"]
+    },
+    "care_pathway_case_mix": ["age_group", "sex", "initial_KTAS", "AVPU", "119_arrival", "transfer_in", "ED_level_when_estimable", "facility_fixed_effects"]
+  }
+}
