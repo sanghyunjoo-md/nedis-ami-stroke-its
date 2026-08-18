@@ -23,7 +23,8 @@ The scripts perform the following tasks:
 3. run the prespecified sensitivity analyses;
 4. fit supportive encounter-level case-mix models;
 5. independently validate the estimates and completeness series;
-6. generate the severity and manuscript Figure 5 care-pathway forest plots; and
+6. generate the severity plots and the care-pathway forest plot reported as
+   Appendix E1 Figure E6; and
 7. prepare non-patient-level flat tables used for the results workbook.
 
 The default parent-cohort path is

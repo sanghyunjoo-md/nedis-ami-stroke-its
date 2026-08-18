@@ -2,7 +2,7 @@
 
 This repository contains the Python analysis code accompanying the manuscript:
 
-> **Changes in Emergency Department Utilization, Presenting Severity, and Care Pathways for Acute Myocardial Infarction and Stroke Following the 2024 Mass Resignation of Junior Physicians in South Korea: A Nationwide Interrupted Time-Series Study**
+> **Emergency Department Use, Presenting Severity, and Care Pathways for Myocardial Infarction and Stroke During a Nationwide Physician Workforce Disruption in South Korea**
 
 The code constructs the prespecified cohort, aggregates complete calendar weeks, fits the interrupted time-series models, performs primary, sensitivity, access, presenting-severity, care-pathway, and supportive case-mix analyses, validates the results, and generates manuscript-facing tables and figures.
 

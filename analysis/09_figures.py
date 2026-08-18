@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create vector and 300-dpi figures conforming to BMC artwork guidance."""
+"""Create vector and 300-dpi manuscript figures."""
 
 from __future__ import annotations
 

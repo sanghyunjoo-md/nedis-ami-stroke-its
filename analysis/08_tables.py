@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate BMC-ready aggregate tables without patient- or facility-level identifiers."""
+"""Generate journal-ready aggregate tables without patient- or facility-level identifiers."""
 
 from __future__ import annotations
 
