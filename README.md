@@ -2,7 +2,7 @@
 
 This repository contains the Python analysis code accompanying the manuscript:
 
-> **Emergency Department Use, Presenting Severity, and Care Pathways for Myocardial Infarction and Stroke During a Nationwide Physician Workforce Disruption in South Korea**
+> **Recorded acute myocardial infarction and stroke encounters decreased selectively; documented care pathways varied during South Korea's 2024 junior-physician mass resignation**
 
 The code constructs the prespecified cohort, aggregates complete calendar weeks, fits the interrupted time-series models, performs primary, sensitivity, access, presenting-severity, care-pathway, and supportive case-mix analyses, validates the results, and generates manuscript-facing tables and figures.
 
@@ -116,7 +116,7 @@ This is an uncontrolled interrupted time-series study of temporal changes. The c
 
 ## Citation
 
-Citation metadata are provided in `CITATION.cff`. After the GitHub release is archived in Zenodo, cite the version-specific Zenodo DOI.
+Citation metadata are provided in `CITATION.cff`. Cite the archived version 1.1.1 release using the version-specific Zenodo DOI: https://doi.org/10.5281/zenodo.21989231.
 
 ## License
 
