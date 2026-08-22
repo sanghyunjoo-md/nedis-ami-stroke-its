@@ -73,7 +73,7 @@ care-pathway tests with 14 Benjamini-Hochberg-adjusted signals.
 The repository definitions for the interruption date, complete-week windows,
 outcomes, negative-binomial and grouped-binomial model families, annual
 seasonality, four-lag HAC covariance, and fixed multiplicity families matched
-the submission sources. A public-exposure scan of all 39 repository files
+the manuscript sources. A public-exposure scan of all 39 repository files
 found no patient-level or facility-level data, aggregate result files,
 restricted-file checksums, signed governance documents, or local analysis
 outputs.
@@ -83,3 +83,11 @@ journal-neutral comments, release documentation, and the supplemental figure
 mapping. It changes no analytic logic, configuration, model specification,
 multiplicity procedure, numerical result, restricted-data boundary, or
 historical lock identifier.
+
+## Post-release metadata alignment — 2026-08-22
+
+The public-facing README, citation metadata, and release documentation were
+aligned to the current manuscript title and the version-specific Zenodo DOI
+without changing the v1.1.1 tag or archived analytic snapshot. Historical
+analysis-lock identifiers remain verbatim for auditability and do not identify
+the current or intended target journal.
