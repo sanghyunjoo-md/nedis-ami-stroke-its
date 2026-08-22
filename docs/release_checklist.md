@@ -3,7 +3,7 @@
 Use this checklist for the documentation-alignment release completed after the
 Stage 3-D v1.3 cross-audit.
 
-- [ ] Confirm that the final Annals manuscript title and Appendix E1 Figure E6 mapping are aligned.
+- [ ] Confirm that the manuscript title current at release and Appendix E1 Figure E6 mapping are aligned.
 - [ ] Confirm that `data/raw/` contains only its README.
 - [ ] Confirm that `private/` contains only its README.
 - [ ] Confirm that no `analysis_outputs/`, `analysis_extension_outputs/`, spreadsheet, CSV, pickle, log, signed document, or local checksum is present.
