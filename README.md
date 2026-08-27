@@ -2,7 +2,7 @@
 
 This repository contains the Python analysis code accompanying the manuscript:
 
-> **Recorded acute myocardial infarction and stroke encounters decreased selectively; documented care pathways varied during South Korea's 2024 junior-physician mass resignation**
+> **Emergency Department Use, Presenting Severity, and Care Pathways for Myocardial Infarction and Stroke During South Korea's Junior-Physician Mass Resignation**
 
 The code constructs the prespecified cohort, aggregates complete calendar weeks, fits the interrupted time-series models, performs primary, sensitivity, access, presenting-severity, care-pathway, and supportive case-mix analyses, validates the results, and generates manuscript-facing tables and figures.
 
